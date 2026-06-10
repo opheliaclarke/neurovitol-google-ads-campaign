@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeuroVitol — Google Ads Search Campaign (US)</title>
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2330;--border:#2d3748;--text:#e6edf3;--muted:#9aa7b4;--accent:#3fb950;--accent2:#58a6ff;--violet:#a78bfa;--warn:#f0a020;--danger:#f85149}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header{padding:32px 24px;background:linear-gradient(135deg,#1a1630,#0d1117);border-bottom:1px solid var(--border)}
+  header h1{margin:0 0 6px;font-size:26px}
+  header p{margin:2px 0;color:var(--muted)}
+  .wrap{max-width:1060px;margin:0 auto;padding:24px}
+  h2{margin:36px 0 14px;font-size:21px;border-bottom:1px solid var(--border);padding-bottom:8px}
+  h3{margin:26px 0 8px;font-size:16px;color:var(--accent2)}
+  .pill{display:inline-block;background:var(--panel2);border:1px solid var(--border);border-radius:999px;padding:2px 11px;font-size:12px;color:var(--muted);margin:2px 4px 2px 0}
+  .callout{border-left:4px solid var(--warn);background:#1d1a0e;padding:14px 16px;border-radius:8px;margin:16px 0}
+  .callout.danger{border-color:var(--danger);background:#1d1112}
+  .callout.ok{border-color:var(--accent);background:#0f1d12}
+  .callout.info{border-color:var(--accent2);background:#0e1623}
+  .callout b{color:var(--text)}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;overflow:hidden;border-radius:8px}
+  th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--panel2)}
+  tr:nth-child(even) td{background:var(--panel)}
+  .block{position:relative;background:var(--panel);border:1px solid var(--border);border-radius:8px;margin:10px 0}
+  .block pre{margin:0;padding:14px 16px;overflow-x:auto;font:13px/1.5 "SF Mono",Menlo,Consolas,monospace;color:#cdd9e5;white-space:pre-wrap;word-break:break-word}
+  .copybtn{position:absolute;top:8px;right:8px;background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 12px;font-size:12px;cursor:pointer;transition:.15s}
+  .copybtn:hover{background:var(--accent);color:#06210d;border-color:var(--accent)}
+  .copybtn.done{background:var(--accent);color:#06210d}
+  .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 4px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:13px}
+  a{color:var(--accent2)}
+  .toc{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px 18px;columns:2}
+  @media(max-width:600px){.toc{columns:1}}
+  .toc a{display:block;padding:3px 0;text-decoration:none}
+  .check li{margin:6px 0}
+  .flow{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:16px;font:13px/1.7 "SF Mono",Menlo,Consolas,monospace;overflow-x:auto;white-space:pre}
+  footer{color:var(--muted);font-size:13px;text-align:center;padding:30px;border-top:1px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🧠 NeuroVitol — Google Ads Search Campaign (US)</h1>
+  <p><b>Payout</b> $200/sale &nbsp;·&nbsp; <b>LP</b> <code>https://neurovitol.shop</code> (SEO site doubles as ad lander) &nbsp;·&nbsp; <b>Offer</b> lckhighepcs RJSXT8 &nbsp;·&nbsp; Built 2026-06-10</p>
+  <p><b>Traffic split:</b> ads → <code>source_id=ggax</code> &nbsp;·&nbsp; SEO/other → <code>source_id=orga</code> &nbsp;·&nbsp; conversions pushed back via Google Sheets import (gclid + iOS gbraid/wbraid)</p>
+  <p style="margin-top:10px">
+    <span class="pill">Search only</span><span class="pill">3 campaigns · 17 ad groups</span><span class="pill">Cross-bidding on 15 brands</span>
+    <span class="pill">Offline conversion import</span><span class="pill">iOS-safe tracking</span><span class="pill">Supplement-compliant copy</span>
+  </p>
+</header>
+<div class="wrap">
+
+<div class="toc">
+  <a href="#map">1 · How it all fits together</a>
+  <a href="#site">2 · Website changes (already LIVE)</a>
+  <a href="#account">3 · Account setup &amp; tracking settings</a>
+  <a href="#conv">4 · Conversions via Google Sheets (incl. iOS)</a>
+  <a href="#c1">5 · Campaign 1 — Brand</a>
+  <a href="#c2">6 · Campaign 2 — Competitors (cross-bid)</a>
+  <a href="#c3">7 · Campaign 3 — Category</a>
+  <a href="#negs">8 · Shared negative keywords</a>
+  <a href="#assets">9 · Ad assets (sitelinks, callouts, snippets)</a>
+  <a href="#bid">10 · Bidding &amp; budget plan</a>
+  <a href="#comply">11 · Compliance guardrails</a>
+  <a href="#launch">12 · Launch checklist</a>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="map">1 · How it all fits together</h2>
+<div class="flow">Google Ad click (auto-tagging adds the click id)
+   │  desktop/Android → ?gclid=Cj0K…        iOS Safari → ?gbraid=0AAA…   (ATT blocks gclid)
+   │  + Final URL suffix src=ggax           iOS web-to-app → ?wbraid=…
+   ▼
+neurovitol.shop  (config.js captures ids → sessionStorage, survives page-to-page browsing)
+   │  visitor reads pre-sell → clicks any CTA
+   ▼
+lckhighepcs.com/2GXK7W/RJSXT8/?source_id=ggax&sub1=&lt;gclid&gt;&sub2=&lt;gbraid&gt;&sub3=&lt;wbraid&gt;
+   │  SEO visitors get the exact same link with source_id=orga and empty subs
+   ▼
+SALE → network conversion report shows source_id + sub1/sub2/sub3
+   ▼
+Your Google Sheet (already set up) → Google Ads "Conversions from clicks" import
+   ▼
+Google Ads learns which keyword/ad made the $200 → smart bidding gets fuel</div>
+
+<table>
+<tr><th>Campaign</th><th>Job</th><th>Lands on</th><th>Daily budget</th></tr>
+<tr><td><b>NV-1 Brand</b></td><td>Own every "neurovitol" search — cheapest, hottest clicks</td><td><code>neurovitol.shop/</code></td><td>$15</td></tr>
+<tr><td><b>NV-2 Competitors</b></td><td>Cross-bid 15 rival brands → "NeuroVitol is better than X" pages</td><td><code>/vs/&lt;brand&gt;.html</code></td><td>$50</td></tr>
+<tr><td><b>NV-3 Category</b></td><td>Generic buyer intent: memory / focus / brain-fog / nootropics</td><td><code>neurovitol.shop/</code></td><td>$35</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="site">2 · Website changes — ✅ already LIVE</h2>
+<div class="callout ok"><b>Nothing left for you to do on the site.</b> I shipped the traffic-split update to <code>neurovitol.shop</code> (commit <code>b8fc058</code>). Tested in 6 scenarios: ads desktop, ads iOS, deep navigation, pure SEO, stripped auto-tagging, VSL slot.</div>
+<ul>
+<li><b>Both affiliate links now carry</b> <code>?source_id={source_id}&amp;sub1={gclid}&amp;sub2={gbraid}&amp;sub3={wbraid}</code>.</li>
+<li><b>Ads visit detection:</b> any of <code>gclid / gbraid / wbraid</code> on the landing URL — or the explicit <code>src=ggax</code> suffix — flips the session to <code>source_id=ggax</code>. The verdict + ids persist in <code>sessionStorage</code>, so a visitor who lands on a vs-page from an ad, browses 4 pages, then clicks a CTA still hands off as <code>ggax</code> with the click id intact.</li>
+<li><b>Everything else</b> (SEO, direct, social) automatically hands off as <code>source_id=orga</code> with empty subs.</li>
+<li><b>iOS:</b> Apple's ATT strips <code>gclid</code> on iOS Safari. Google instead auto-tags with <code>gbraid</code> (web→web) or <code>wbraid</code> (web→app). Both are captured and forwarded in <code>sub2/sub3</code> — that's what makes manual conversion upload possible for ~30% of US clicks you'd otherwise lose.</li>
+</ul>
+<p class="label">What each network field means in your conversion export</p>
+<table>
+<tr><th>Network field</th><th>Contains</th><th>Use</th></tr>
+<tr><td><code>source_id</code></td><td><code>ggax</code> (ads) or <code>orga</code> (SEO)</td><td>Filter: upload ONLY <code>ggax</code> rows to Google Ads</td></tr>
+<tr><td><code>sub1</code></td><td>gclid (desktop / Android)</td><td>→ "Google Click ID" column</td></tr>
+<tr><td><code>sub2</code></td><td>gbraid (iOS web)</td><td>→ "Google Click ID" column when sub1 is empty</td></tr>
+<tr><td><code>sub3</code></td><td>wbraid (iOS web-to-app)</td><td>→ "Google Click ID" column when sub1 &amp; sub2 empty</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="account">3 · Account setup &amp; tracking settings</h2>
+<ol class="check">
+<li><b>Auto-tagging ON</b> — Admin → Account settings → Auto-tagging → "Tag the URL that people click through from my ad" ✅ (this is what appends gclid/gbraid/wbraid).</li>
+<li><b>Account-level Final URL suffix</b> — Admin → Account settings → Tracking → Final URL suffix:</li>
+</ol>
+<!-- SUFFIX -->
+<ol class="check" start="3">
+<li><b>Auto-apply recommendations OFF</b> — Recommendations → Auto-apply → untick everything. (Google will otherwise add broad match + "enhanced" CPCs that wreck affiliate margins.)</li>
+<li><b>Every campaign:</b> Search Network only — <b>untick</b> "Google search partners" and "Display Network".</li>
+<li><b>Location:</b> United States · Location options → <b>Presence</b> (not "presence or interest").</li>
+<li><b>Language:</b> English.</li>
+<li><b>Account goal:</b> only the imported <code>NV Purchase</code> conversion (section 4) set as <b>Primary</b>. Remove/secondary everything else (page views, GA imports, etc.) so smart bidding optimizes purely to sales.</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="conv">4 · Conversion tracking — Google Sheets manual import</h2>
+<p>The sale happens on the offer page (not your domain), so Google can't see it. You close the loop by uploading conversions from the network's report back into Google Ads. You said your Sheet + export are ready — here is the exact wiring:</p>
+
+<h3>4a · Create the conversion action (one time)</h3>
+<ol class="check">
+<li>Google Ads → Goals → Conversions → <b>+ New conversion action</b> → <b>Import</b> → "Other data sources or CRMs" → <b>Track conversions from clicks</b>.</li>
+<li>Settings: Name <code>NV Purchase</code> · Category <b>Purchase</b> · Value: <b>Use values from your data</b> (fallback $200) · Count <b>One</b> · Click-through window <b>90 days</b> · set as <b>Primary</b>.</li>
+</ol>
+
+<h3>4b · Sheet format (the 5 columns Google expects)</h3>
+<!-- SHEETCOLS -->
+<ul>
+<li><b>Google Click ID:</b> paste whichever id the network passed back — <code>sub1</code> (gclid) → if empty use <code>sub2</code> (gbraid) → if empty use <code>sub3</code> (wbraid). <b>Google accepts all three in this same column.</b> This is the iOS answer: gbraid/wbraid rows ARE your iOS conversions.</li>
+<li><b>Conversion Name:</b> must exactly match <code>NV Purchase</code>.</li>
+<li><b>Conversion Time:</b> must be AFTER the click. Format <code>yyyy-MM-dd HH:mm:ss-05:00</code> (use the network report's timestamp + your account timezone offset).</li>
+<li><b>Only upload rows where</b> <code>source_id=ggax</code>. Never upload <code>orga</code> rows — they have no click id and would error out anyway.</li>
+</ul>
+
+<h3>4c · Hook the Sheet to Google Ads (one time, then it's automatic)</h3>
+<ol class="check">
+<li>Goals → Conversions → <b>Uploads</b> → <b>+</b> → source <b>Google Sheets</b> → link your sheet.</li>
+<li>Set <b>Schedule: Daily</b> (pick a time after your daily network export lands in the sheet).</li>
+<li>Each day: export <code>ggax</code> conversions from lckhighepcs → paste/append into the sheet → Google pulls them automatically. Check the Uploads page for row errors the first week.</li>
+</ol>
+<div class="callout info"><b>Rhythm:</b> upload daily. Conversions can be imported up to 90 days after the click, but smart bidding learns fastest on fresh data — same-day or next-day uploads make Maximize Conversions usable weeks earlier.</div>
+
+<!-- ============================================================ -->
+<h2 id="c1">5 · Campaign 1 — <code>NV-1 Brand US</code></h2>
+<p><b>1 ad group · Final URL:</b> <code>https://neurovitol.shop/</code> · people already sold by TikTok/YouTube/the VSL who are searching the brand — cheapest $200s you'll ever buy.</p>
+<p class="label">Ad group: Brand — keywords (match type embedded — paste straight in)</p>
+<!-- KWB -->
+<p class="label">RSA — 15 headlines (paste block 1) + 4 descriptions (paste block 2) · Path: <code>Official</code> / <code>60-Off</code> · Pin headline 1 to position 1</p>
+<!-- HB -->
+<!-- DB -->
+
+<!-- ============================================================ -->
+<h2 id="c2">6 · Campaign 2 — <code>NV-2 Competitors US</code> (cross-bidding)</h2>
+<p>15 ad groups — one per rival brand. 12 land on dedicated static comparison pages; 3 (Thesis, NeuroQ, Brain Pill) use the dynamic catch-all <code>vs.html?brand=</code> until static pages are built.</p>
+<div class="callout danger"><b>Trademark rule:</b> competitor names in <b>keywords = allowed</b> (US). Competitor names in <b>ad text = never</b>. The RSA below is deliberately generic ("Compare Before You Buy") — reuse the same RSA in all 15 ad groups, only the Final URL changes. <b>Do NOT use {KeyWord:} insertion in this campaign</b> — it would inject trademarks into your ad text.</div>
+
+<table>
+<tr><th>#</th><th>Ad group</th><th>Final URL</th></tr>
+<tbody id="vstable"></tbody>
+</table>
+
+<p class="label">RSA for ALL 15 competitor ad groups · Path: <code>Compare</code> / <code>Top-Brands</code></p>
+<!-- HC -->
+<!-- DC -->
+
+<div id="vslist"></div>
+
+<!-- ============================================================ -->
+<h2 id="c3">7 · Campaign 3 — <code>NV-3 Category US</code></h2>
+<p>Generic buyer-intent searches. 4 ad groups, all land on <code>https://neurovitol.shop/</code> (the strongest pre-sell; sitelinks route to ingredients/reviews).</p>
+
+<h3>Ad group 1 — Memory Supplements</h3>
+<!-- KWG1 -->
+<h3>Ad group 2 — Focus &amp; Brain Fog</h3>
+<!-- KWG2 -->
+<h3>Ad group 3 — Brain Supplements &amp; Nootropics</h3>
+<!-- KWG3 -->
+<h3>Ad group 4 — Seniors &amp; Healthy Aging</h3>
+<!-- KWG4 -->
+
+<p class="label">RSA for all 4 category ad groups · Path: <code>Brain-Support</code> / <code>Memory</code> · {KeyWord:} insertion is safe here (generic terms only)</p>
+<!-- HG -->
+<!-- DG -->
+
+<!-- ============================================================ -->
+<h2 id="negs">8 · Shared negative keyword list — <code>NV Shared Negatives</code></h2>
+<p>One list, applied to ALL 3 campaigns (Tools → Shared library → Negative keyword lists → new → paste → apply to campaigns). Phrase match. Three jobs: kill freebie hunters, kill research-only traffic, and — critical for compliance — block every <b>disease-term</b> search so the ads never appear next to "supplement for dementia"-type queries.</p>
+<!-- NEG -->
+<div class="callout"><b>Deliberately NOT negatived:</b> <code>reviews</code>, <code>scam</code>, <code>legit</code>, <code>coupon</code>, <code>discount</code>, <code>side effects</code> — these are last-step buyer searches; the LP and vs-pages are built to answer them and convert.</div>
+
+<!-- ============================================================ -->
+<h2 id="assets">9 · Ad assets (apply at CAMPAIGN level to all 3)</h2>
+<p class="label">Sitelinks — 6 (text ≤25 · each description line ≤35)</p>
+<!-- SL -->
+<p class="label">Callouts — 8 (≤25 chars each)</p>
+<!-- CO -->
+<p class="label">Structured snippet</p>
+<!-- EX -->
+
+<!-- ============================================================ -->
+<h2 id="bid">10 · Bidding &amp; budget plan</h2>
+<table>
+<tr><th>Phase</th><th>When</th><th>Bidding</th><th>Why</th></tr>
+<tr><td><b>1 · Seed</b></td><td>Day 1–14</td><td><b>Maximize Clicks</b>, max CPC limit <b>$2.50</b> ($1.50 on Brand)</td><td>No conversion history yet — buy cheap, relevant volume while Sheet imports accumulate.</td></tr>
+<tr><td><b>2 · Learn</b></td><td>≥15 imported conversions in 30 days</td><td><b>Maximize Conversions</b> (no target)</td><td>Smart bidding now has real $200 sales to chase, including iOS ones via gbraid/wbraid.</td></tr>
+<tr><td><b>3 · Scale</b></td><td>≥30 conversions, stable CPA</td><td><b>tCPA ≈ $80–100</b>, raise budgets 20%/week on winners</td><td>$200 payout → break-even CPA $200; tCPA $80–100 banks 2–2.5× margin.</td></tr>
+</table>
+<ul>
+<li><b>Budgets:</b> Brand $15/d · Competitors $50/d · Category $35/d = <b>$100/day</b> total to start.</li>
+<li><b>First-week pruning:</b> pause any competitor ad group with CTR &lt; 2% after 200 impressions; pause keywords with 30+ clicks and zero offer-page hand-offs.</li>
+<li><b>Watch iOS:</b> after 2 weeks of imports, compare Devices report conversions. If iPhone looks weirdly low, your gbraid rows aren't being uploaded — check the sheet mapping.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="comply">11 · Compliance guardrails (supplement = never a cure)</h2>
+<ul>
+<li>NeuroVitol is a <b>dietary supplement</b>. Ads may say "supports memory &amp; focus" — never "treats / cures / prevents" anything. All disease terms (dementia, Alzheimer's, ADHD, …) are blocked in the shared negative list and must never appear in keywords or ad text.</li>
+<li>No competitor trademarks in ad text (keywords OK in the US).</li>
+<li>No "guaranteed results", no before/after cognition claims, no medical-professional impersonation. "60-Day Money-Back Guarantee" is fine — it's a refund policy, not a results claim.</li>
+<li>Ads point to <b>neurovitol.shop</b> (your own pre-sell with full FDA disclaimer, contact info, legal pages) — not to the raw affiliate link. That's exactly the destination quality Google wants; no cloaking, no redirect tricks.</li>
+<li>"Up to 60% off" matches the live offer-page pricing — keep ad claims synced if the offer changes.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="launch">12 · Launch checklist</h2>
+<ol class="check">
+<li>Account: auto-tagging ON · Final URL suffix <code>src=ggax</code> · auto-apply OFF (section 3).</li>
+<li>Create conversion action <code>NV Purchase</code> (4a) and link the Google Sheet with daily schedule (4c).</li>
+<li>Build shared negative list <code>NV Shared Negatives</code> (section 8) — BEFORE enabling anything.</li>
+<li>Build <code>NV-1 Brand US</code> — settings from section 3, keywords + RSA from section 5, budget $15/d, Max Clicks @ $1.50 cap.</li>
+<li>Build <code>NV-2 Competitors US</code> — 15 ad groups from section 6, same RSA each, per-group Final URL from the table, $50/d, Max Clicks @ $2.50 cap.</li>
+<li>Build <code>NV-3 Category US</code> — 4 ad groups from section 7, $35/d, Max Clicks @ $2.50 cap.</li>
+<li>Apply sitelinks/callouts/snippet (section 9) at campaign level on all 3.</li>
+<li>Apply <code>NV Shared Negatives</code> to all 3 campaigns.</li>
+<li>Click your own ad once live (or use Ad Preview) → confirm the LP CTA hand-off URL shows <code>source_id=ggax&amp;sub1=&lt;your gclid&gt;</code>.</li>
+<li>Next day: first sheet upload → Uploads page shows 0 errors → you're closed-loop. 🚀</li>
+</ol>
+
+<footer>NeuroVitol Google Ads playbook · built 2026-06-10 · LP: neurovitol.shop · keep this repo private</footer>
+</div>
+
+<script>
+const B=(t)=>{const d=document.createElement('div');d.className='block';const b=document.createElement('button');b.className='copybtn';b.textContent='Copy';const p=document.createElement('pre');p.textContent=t;b.onclick=()=>{navigator.clipboard.writeText(t).then(()=>{b.textContent='Copied ✓';b.classList.add('done');setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1400)})};d.appendChild(b);d.appendChild(p);return d};
+
+const data={
+SUFFIX:`src=ggax`,
+SHEETCOLS:`Google Click ID\tConversion Name\tConversion Time\tConversion Value\tConversion Currency
+<gclid OR gbraid OR wbraid>\tNV Purchase\t2026-06-10 14:32:00-05:00\t200\tUSD`,
+KWB:`[neurovitol]
+[neurovitol reviews]
+[neurovitol review]
+[neurovitol brain supplement]
+[neurovitol supplement]
+[neurovitol official website]
+[neurovitol website]
+[buy neurovitol]
+[neurovitol where to buy]
+[neurovitol price]
+[neurovitol cost]
+[neurovitol discount]
+[neurovitol amazon]
+[neurovitol walmart]
+[neurovitol ingredients]
+[neurovitol scam]
+[is neurovitol legit]
+[neurovitol customer reviews]
+[neuro vitol]
+[neurovitrol]
+[nuerovitol]
+[congniflo]
+[cogniflo]
+"neurovitol"
+"congniflo brain"`,
+HB:`NeuroVitol® Official Offer
+NeuroVitol® Brain Support
+Up To 60% Off + Free Shipping
+60-Day Money-Back Guarantee
+Supports Memory & Focus
+5 Clinically Studied Nutrients
+Free US Shipping Included
+Choose Your Bottle Package
+Rated 4.9/5 By 6,000+ Users
+Bacopa, Lion's Mane & Ginkgo
+Non-GMO, Made In The USA
+Order NeuroVitol Today
+Sharper Focus, Less Brain Fog
+Lock In Today's Discount
+Get The Real NeuroVitol®`,
+DB:`Bacopa, Lion's Mane, Ginkgo, PS & B12 in one capsule to support memory, focus & clarity.
+Up to 60% off + free US shipping. Every order backed by a 60-day money-back guarantee.
+Rated 4.9/5 by 6,000+ customers. Non-GMO, made in the USA in a GMP-certified facility.
+Choose your NeuroVitol package on the official order page & lock in today's discount.`,
+HC:`A Smarter Brain Supplement
+Compare Before You Buy
+See The 2026 Comparison
+Why Switchers Pick NeuroVitol
+NeuroVitol® Brain Support
+5 Brain Nutrients, 1 Capsule
+Supports Memory & Focus
+Up To 60% Off + Free Shipping
+60-Day Money-Back Guarantee
+Rated 4.9/5 By 6,000+ Users
+Side-By-Side Breakdown
+Looking For An Alternative?
+Check Ingredients & Price
+Sharper Focus, Less Brain Fog
+Full Doses, Full Transparency`,
+DC:`See how NeuroVitol stacks up on ingredients, dosing, price & guarantee — side by side.
+Bacopa, Lion's Mane, Ginkgo, PS & B12 — clinically studied nutrients at real doses.
+Thinking of switching? Compare formulas first. 60-day money-back guarantee, every order.
+Up to 60% off + free US shipping. Rated 4.9/5 by 6,000+ customers. Compare & decide.`,
+KWG1:`"best memory supplement"
+"best memory supplements"
+"memory supplements"
+"supplements for memory"
+"memory pills"
+"vitamins for memory"
+"supplements to improve memory"
+"natural memory supplements"
+[memory supplements that actually work]
+[best supplement for memory and focus]
+[memory vitamins for adults]
+[best memory pills for adults]
+[top rated memory supplements]
+[best vitamins for memory and brain]`,
+KWG2:`"brain fog supplements"
+"supplements for brain fog"
+"supplements for focus"
+"focus pills"
+"vitamins for focus"
+"mental clarity supplements"
+"focus supplements for adults"
+[best supplements for focus and concentration]
+[supplements for mental clarity]
+[best brain fog supplement]
+[natural focus supplements]
+[best supplement for brain fog]
+[vitamins for focus and energy]`,
+KWG3:`"best brain supplements"
+"brain supplements"
+"brain health supplements"
+"best nootropics"
+"nootropics for memory"
+"brain booster supplements"
+"top brain supplements"
+"brain pills"
+[best brain supplement 2026]
+[best nootropic supplement]
+[buy nootropics online]
+[best brain vitamins]
+[best nootropics for focus]
+[brain supplement that works]`,
+KWG4:`"memory supplements for seniors"
+"brain supplements for seniors"
+"memory pills for seniors"
+"brain vitamins for elderly"
+"brain health for seniors"
+[best memory supplements for seniors]
+[best brain supplement for older adults]
+[memory vitamins for seniors]
+[supplements for aging brain]
+[best brain vitamins for seniors]`,
+HG:`{KeyWord:Brain Supplement}
+Supports Memory & Focus
+Best-Rated Brain Support 2026
+5 Clinically Studied Nutrients
+Bacopa, Lion's Mane & Ginkgo
+Up To 60% Off + Free Shipping
+60-Day Money-Back Guarantee
+Rated 4.9/5 By 6,000+ Users
+Sharper Focus, Less Brain Fog
+Fight Brain Fog Naturally
+Non-GMO, Made In The USA
+One Capsule, Five Nutrients
+NeuroVitol® Brain Support
+Feel The Difference In Weeks
+Try It Risk-Free For 60 Days`,
+DG:`NeuroVitol combines 5 clinically studied nutrients to support memory, focus & clarity.
+Bacopa, Lion's Mane, Ginkgo, phosphatidylserine & B12 — real doses, no fillers.
+Rated 4.9/5 by 6,000+ customers. Non-GMO, made in the USA. 60-day money-back guarantee.
+Up to 60% off + free US shipping today. Try NeuroVitol risk-free for 60 days.`,
+NEG:`"free"
+"for free"
+"jobs"
+"job"
+"career"
+"careers"
+"hiring"
+"salary"
+"wholesale"
+"bulk"
+"distributor"
+"supplier"
+"affiliate program"
+"lawsuit"
+"class action"
+"recall"
+"reddit"
+"wikipedia"
+"wiki"
+"pdf"
+"youtube"
+"diy"
+"how to make"
+"recipe"
+"for dogs"
+"for cats"
+"for kids"
+"for children"
+"pediatric"
+"adderall"
+"ritalin"
+"vyvanse"
+"modafinil"
+"prescription"
+"dementia"
+"alzheimer"
+"alzheimers"
+"adhd"
+"autism"
+"parkinson"
+"parkinsons"
+"depression"
+"anxiety"
+"stroke"
+"brain injury"
+"tbi"
+"concussion"
+"epilepsy"
+"seizure"
+"cure"
+"treatment"
+"medication"
+"medicine"`,
+SL:`Ingredients  |  What's inside: 5 nutrients · Full label transparency  →  https://neurovitol.shop/ingredients.html
+Real Reviews  |  Rated 4.9/5 by 6,000+ users · Read verified stories  →  https://neurovitol.shop/reviews.html
+How It Works  |  3-stage brain support · Week-by-week timeline  →  https://neurovitol.shop/how-it-works.html
+Compare Brands  |  NeuroVitol vs 12 brands · Side-by-side breakdowns  →  https://neurovitol.shop/vs/
+Benefits  |  Memory, focus & clarity · What users report  →  https://neurovitol.shop/benefits.html
+FAQ  |  Dosage, shipping, guarantee · 18 answers  →  https://neurovitol.shop/faq.html`,
+CO:`60-Day Money-Back
+Free US Shipping
+Made In The USA
+Non-GMO Formula
+Clinically Studied Doses
+Secure Checkout
+Up To 60% Off Today
+6,000+ Happy Customers`,
+EX:`STRUCTURED SNIPPET — Header "Types":
+Bacopa Monnieri, Lion's Mane, Ginkgo Biloba, Phosphatidylserine, Vitamin B12`
+};
+
+/* ---- competitor ad groups: 12 static vs-pages + 3 dynamic ---- */
+const SHOP="https://neurovitol.shop";
+const kwgen=(b,extras)=>{
+  const base=[`[${b}]`,`"${b}"`,`[${b} reviews]`,`"${b} review"`,`[does ${b} work]`,`"is ${b} legit"`,`"${b} vs"`,`[${b} alternative]`,`"better than ${b}"`,`[buy ${b}]`,`"${b} price"`,`"${b} ingredients"`,`"${b} side effects"`,`"${b} complaints"`];
+  return base.concat(extras||[]).join("\n");
+};
+const COMPETITORS=[
+ {n:"Alpha Brain",k:"alpha brain",u:SHOP+"/vs/alpha-brain.html",x:['"onnit alpha brain"','[alpha brain onnit]','"alpha brain black label"']},
+ {n:"Mind Lab Pro",k:"mind lab pro",u:SHOP+"/vs/mind-lab-pro.html",x:['"mindlab pro"','[mind lab pro reviews]']},
+ {n:"NeuroZoom",k:"neurozoom",u:SHOP+"/vs/neurozoom.html",x:['"neuro zoom"']},
+ {n:"Qualia Mind",k:"qualia mind",u:SHOP+"/vs/qualia-mind.html",x:['"neurohacker qualia"','[qualia mind neurohacker]']},
+ {n:"Genius Wave",k:"genius wave",u:SHOP+"/vs/genius-wave.html",x:['"the genius wave"','[the genius wave reviews]']},
+ {n:"Synaptigen",k:"synaptigen",u:SHOP+"/vs/synaptigen.html",x:[]},
+ {n:"Neuro-Thrive",k:"neuro thrive",u:SHOP+"/vs/neuro-thrive.html",x:['"neurothrive"','[neuro thrive brain support]']},
+ {n:"Prevagen",k:"prevagen",u:SHOP+"/vs/prevagen.html",x:['"prevagen extra strength"','[prevagen for memory]']},
+ {n:"Neuriva",k:"neuriva",u:SHOP+"/vs/neuriva.html",x:['"neuriva plus"','[neuriva ultra]','"neuriva brain performance"']},
+ {n:"Focus Factor",k:"focus factor",u:SHOP+"/vs/focus-factor.html",x:['"focus factor extra strength"']},
+ {n:"NooCube",k:"noocube",u:SHOP+"/vs/noocube.html",x:['"noo cube"']},
+ {n:"BrainMD",k:"brainmd",u:SHOP+"/vs/brainmd.html",x:['"brain md"','[dr amen brain supplements]']},
+ {n:"Thesis (dynamic)",k:"thesis nootropics",u:SHOP+"/vs.html?brand=Thesis",x:['"takethesis"','[thesis supplement]','"thesis nootropic review"']},
+ {n:"NeuroQ (dynamic)",k:"neuroq",u:SHOP+"/vs.html?brand=NeuroQ",x:['"neuro q"','[neuroq memory performance]']},
+ {n:"Brain Pill (dynamic)",k:"brain pill",u:SHOP+"/vs.html?brand=Brain%20Pill",x:['"brainpill"']}
+];
+const tb=document.getElementById('vstable');
+const list=document.getElementById('vslist');
+COMPETITORS.forEach((c,i)=>{
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${i+1}</td><td><b>${c.n}</b></td><td><code>${c.u}</code></td>`;
+  tb.appendChild(tr);
+  const h=document.createElement('h3');
+  h.textContent=`Ad group ${i+1} — ${c.n} · Final URL: ${c.u}`;
+  list.appendChild(h);
+  list.appendChild(B(kwgen(c.k,c.x)));
+});
+
+/* ---- inject copy blocks at comment placeholders ---- */
+for(const k in data){
+  const walker=document.createNodeIterator(document.body,NodeFilter.SHOW_COMMENT);
+  let c;while(c=walker.nextNode()){if(c.nodeValue.trim()===k){c.parentNode.insertBefore(B(data[k]),c.nextSibling);break;}}
+}
+</script>
+</body>
+</html>
